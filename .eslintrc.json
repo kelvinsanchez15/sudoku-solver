@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "plugin:node/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
+  ],
+  "plugins": ["prettier", "jest"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off"
+  },
+  "env": {
+    "jest": true
+  }
+}
