@@ -62,4 +62,18 @@ suite('UnitTests', () => {
       assert.strictEqual(errorDiv.innerText, errorMsg);
     });
   });
+
+  suite('Function ____()', () => {
+    // Valid complete puzzles pass
+    test('Valid puzzles pass', () => {
+      const input =
+        '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
+    });
+
+    // Invalid complete puzzles fail
+    test('Invalid puzzles fail', () => {
+      const input =
+        '779235418851496372432178956174569283395842761628713549283657194516924837947381625';
+    });
+  });
 });
