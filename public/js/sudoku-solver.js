@@ -3,7 +3,7 @@ const textArea = document.getElementById('text-input');
 // Only the digits 1-9 are accepted as valid input for the puzzle grid
 const validTextAreaInput = (str) => {
   const num = parseInt(str, 10);
-  return num >= 1 && num <= 9;
+  return num >= 1 && num <= 9 && str;
 };
 
 const setGrid = (str) => {
@@ -17,6 +17,27 @@ const setGrid = (str) => {
         ? strValues[i]
         : '';
   });
+};
+
+const generateBoard = (str) => {
+  const errorDiv = document.getElementById('error-msg');
+
+  // Puzzles that are not 81 characters long send error
+  if (str.length !== 81) {
+    errorDiv.innerText = 'Error: Expected puzzle to be 81 characters long.';
+    return null;
+  }
+
+  // Parse a valid puzzle string into an array
+  const arr = str.split('');
+  const board = [];
+
+  for (let i = 0; i < arr.length; i += 9) {
+    board.push(arr.slice(i, i + 9));
+  }
+
+  errorDiv.innerText = '';
+  return board;
 };
 
 const onInputHandler = (e) => {
@@ -34,16 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setGrid(textArea.value);
 });
 
-/* 
-  Export your functions for testing in Node.
-  Note: The `try` block is to prevent errors on
-  the client side
-*/
-try {
+// Functions exports for testing in Node.
+if (typeof exports !== 'undefined') {
   module.exports = {
     setGrid,
     validTextAreaInput,
+    generateBoard,
   };
-} catch (e) {
-  console.log('This is NOT an Error');
 }
