@@ -3,16 +3,22 @@
     "airbnb-base",
     "prettier",
     "plugin:node/recommended",
-    "plugin:jest/recommended",
-    "plugin:jest/style"
+    "plugin:mocha/recommended"
   ],
-  "plugins": ["prettier", "jest"],
+  "plugins": ["prettier", "mocha"],
   "rules": {
     "no-unused-vars": "warn",
-    "no-console": "off"
+    "no-console": "off",
+    "node/no-unpublished-require": [
+      "error",
+      {
+        "allowModules": ["chai", "jsdom"]
+      }
+    ],
+    "mocha/no-mocha-arrows": "off"
   },
   "env": {
-    "jest": true,
+    "mocha": true,
     "browser": true
   }
 }
