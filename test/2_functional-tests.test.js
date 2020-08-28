@@ -1,6 +1,4 @@
 const { assert } = require('chai');
-const { JSDOM } = require('jsdom');
-const { text } = require('express');
 
 let Solver;
 
