@@ -63,17 +63,43 @@ suite('UnitTests', () => {
     });
   });
 
-  suite('Function ____()', () => {
+  suite('Function validatePuzzle()', () => {
     // Valid complete puzzles pass
     test('Valid puzzles pass', () => {
       const input =
         '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
+
+      const board = Solver.generateBoard(input);
+
+      assert.isTrue(Solver.validatePuzzle(board));
     });
 
     // Invalid complete puzzles fail
     test('Invalid puzzles fail', () => {
       const input =
         '779235418851496372432178956174569283395842761628713549283657194516924837947381625';
+
+      const board = Solver.generateBoard(input);
+
+      assert.isFalse(Solver.validatePuzzle(board));
+    });
+  });
+
+  suite('Function solvePuzzle()', () => {
+    // Returns the expected solution for a valid, incomplete puzzle
+    test('Returns the expected solution for an incomplete puzzle', () => {
+      const input =
+        '..839.7.575.....964..1.......16.29846.9.312.7..754.....62..5.78.8...3.2...492...1';
+      const output =
+        '218396745753284196496157832531672984649831257827549613962415378185763429374928561';
+
+      const board = Solver.generateBoard(input);
+
+      Solver.solvePuzzle(board);
+
+      const solution = board.flat().join('');
+
+      assert.strictEqual(solution, output);
     });
   });
 });
