@@ -26,27 +26,19 @@ suite('Functional Tests', () => {
 
     // Entering a valid number in the grid automatically updates the puzzle string in the text area
     test('Valid number in grid updates the puzzle string in the text area', () => {
-      // const textArea = document.getElementById('text-input');
-      // const cells = document.querySelectorAll('.sudoku-input');
-      // cells[16].value = '1';
-      // cells[25].value = '5';
-      // cells[40].value = '7';
-      // Solver.setTextArea();
-      // console.log(textArea.value);
+      // Pending implementation
     });
   });
 
   suite('Clear and solve buttons', () => {
     // Pressing the "Clear" button clears the sudoku grid and the text area
     test('Function clearInput()', () => {
-      // const textArea = document.getElementById('text-input');
-      // textArea.value = '.12...123.123.123..';
-      // Solver.setGrid('.12...123.123.123..');
-      // Solver.clearInput();
-      // console.log(textArea.value);
+      // Pending implementation
     });
 
     // Pressing the "Solve" button solves the puzzle and fills in the grid with the solution
-    test('Function showSolution(solve(input))', () => {});
+    test('Function showSolution(solve(input))', () => {
+      // Pending implementation
+    });
   });
 });
